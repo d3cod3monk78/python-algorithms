@@ -1,6 +1,6 @@
 from typing import Dict, List, Tuple
 
-def minmax(data: List[int]) -> Dict[str, int]:
+def minmax(data: List[int]) -> Tuple[int, int]:
 	temp_min = data[0]
 	temp_max = data[0]
 
@@ -10,10 +10,7 @@ def minmax(data: List[int]) -> Dict[str, int]:
 		elif x > temp_max:
 			temp_max = x
 
-	return {
-		"min": temp_min,
-		"max": temp_max
-	}
+	return temp_min, temp_max
 
 
 if __name__ == '__main__':
