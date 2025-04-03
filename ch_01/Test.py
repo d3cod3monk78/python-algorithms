@@ -1,15 +1,19 @@
-my_list = list([x for x in range(10)])
+class CountToFive:
+	def __init__(self):
+		self.num = 1
 
-iteration = iter(my_list)
+	def __iter__(self):
+		return self
 
-# print(next(iteration))
-# print(next(iteration))
-# print(next(iteration))
+	def __next__(self):
+		if self.num <= 5:
+			current = self.num
+			self.num += 1
+			return current
 
-while True:
-	try:
-		i = next(iteration)
-		print(i)
+		else:
+			raise StopIteration
 
-	except StopIteration:
-		break
+
+for i in CountToFive():
+	print(i)
