@@ -1,2 +1,15 @@
-if __name__ == '__main__':
-	print([2**x for x in range(1,11)])
+my_list = list([x for x in range(10)])
+
+iteration = iter(my_list)
+
+# print(next(iteration))
+# print(next(iteration))
+# print(next(iteration))
+
+while True:
+	try:
+		i = next(iteration)
+		print(i)
+
+	except StopIteration:
+		break
